@@ -35,10 +35,15 @@
 <script type="text/javascript">
     var bars = document.querySelectorAll('.bar');
     Array.prototype.forEach.call(bars, function(bar) {
-        var inst = new StickyHeader(bar, {
+        var item = new StickyHeader(bar, {
             offsetTop: 100
         });
-        console.log(inst);
+        item.on('on-top', function(sticky) {
+        	console.log('now fixed..', sticky)
+        });
+        item.on('on-origin', function(sticky) {
+        	console.log('now on origin place..', sticky)
+        });
     });
 </script>
 </body>
