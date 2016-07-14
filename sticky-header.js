@@ -3,9 +3,13 @@
     var sticky = function() {
 
         function StickyHeader(element, options) {
+            
+            if(!element) {
+                throw new Error('Please set correct parameters');
+            }
 
             this.element = element;
-            this.offsetTop = options.offsetTop || 0;
+            this.offsetTop = options && options.offsetTop || 0;
             this.isFixed = false;
             this.observers = {
                 'on-top': [],
