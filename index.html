@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sticky Header</title>
+    <style type="text/css">
+        body{
+          height: 3000px;
+          margin:0px;
+          background: #f5f5f5;
+        }
+        .bar {
+          width:600px;
+          height: 150px;
+          margin: auto;
+          background-color: #a22f2f;
+          box-shadow: 2px 2px 7px black;
+        }
+        .bar.green {
+          background-color: #488448;
+        }
+        .placeholder{
+          height: 400px;
+          width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="placeholder"></div>
+    <div class="bar"></div>
+    <div class="placeholder"></div>
+    <div class="bar green"></div>
+</div>
+<script type="text/javascript" src="./sticky-header.js"></script>
+<script type="text/javascript">
+    var bars = document.querySelectorAll('.bar');
+    Array.prototype.forEach.call(bars, function(bar) {
+        var inst = new StickyHeader(bar, {
+            offsetTop: 100
+        });
+        console.log(inst);
+    });
+</script>
+</body>
+</html>
